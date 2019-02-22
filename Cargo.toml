@@ -1,0 +1,19 @@
+[package]
+name = "rust-fil-secp256k1"
+version = "0.1.0"
+authors = ["dignifiedquire <dignifiedquire@users.noreply.github.com>"]
+edition = "2018"
+
+[lib]
+crate-type = ["staticlib"]
+
+[dependencies]
+secp256k1 = { git = "https://github.com/dignifiedquire/rust-secp256k1", features = ["rand"]}
+libc = "0.2"
+rand = "0.4"
+
+[build-dependencies]
+cbindgen = "0.8"
+
+[features]
+default = []
