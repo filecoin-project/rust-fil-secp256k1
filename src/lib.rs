@@ -2,9 +2,11 @@ use libc;
 use rand::OsRng;
 use secp256k1::{constants, SecretKey};
 use std::boxed::Box;
-use std::slice::from_raw_parts;
+// use std::slice::from_raw_parts;
 
 // TODO: Investigate setting up the context for faster operations.
+
+const SECRET_KEY_SIZE: usize = constants::SECRET_KEY_SIZE;
 
 #[no_mangle]
 pub unsafe extern "C" fn generate_key() -> *mut GenerateKeyResponse {
@@ -18,7 +20,7 @@ pub unsafe extern "C" fn generate_key() -> *mut GenerateKeyResponse {
 
 #[repr(C)]
 pub struct GenerateKeyResponse {
-    pub key: [u8; constants::SECRET_KEY_SIZE],
+    pub key: [u8; SECRET_KEY_SIZE],
 }
 
 #[no_mangle]

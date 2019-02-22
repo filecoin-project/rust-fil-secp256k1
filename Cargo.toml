@@ -1,5 +1,5 @@
 [package]
-name = "rust-fil-secp256k1"
+name = "fil-secp256k1"
 version = "0.1.0"
 authors = ["dignifiedquire <dignifiedquire@users.noreply.github.com>"]
 edition = "2018"
